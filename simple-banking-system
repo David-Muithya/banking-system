@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+// Function to display the main menu
+void displayMenu() {
+    cout << "\nBanking System\n";
+    cout << "1. Check Balance\n";
+    cout << "2. Deposit Money\n";
+    cout << "3. Withdraw Money\n";
+    cout << "4. Exit\n";
+    cout << "Enter your choice: ";
+}
+
+// Function to check balance
+void checkBalance(double balance) {
+    cout << "Your current balance is: $" << balance << endl;
+}
+
+// Function to deposit money
+void depositMoney(double &balance) {
+    double deposit;
+    cout << "Enter amount to deposit: $";
+    cin >> deposit;
+    balance += deposit;
+    cout << "Successfully deposited $" << deposit << ". Your new balance is $" << balance << endl;
+}
+
+// Function to withdraw money
+void withdrawMoney(double &balance) {
+    double withdraw;
+    cout << "Enter amount to withdraw: $";
+    cin >> withdraw;
+    if (withdraw > balance) {
+        cout << "Insufficient funds!\n";
+    } else {
+        balance -= withdraw;
+        cout << "Successfully withdrawn $" << withdraw << ". Your new balance is $" << balance << endl;
+    }
+}
+
+int main() {
+    double balance = 0.0;
+    int choice;
+    
+    // Keep the system running until the user chooses to exit
+    do {
+        displayMenu();
+        cin >> choice;
+
+        switch (choice) {
+            case 1: 
+                checkBalance(balance);  // Check balance
+                break;
+            case 2:
+                depositMoney(balance);  // Deposit money
+                break;
+            case 3:
+                withdrawMoney(balance);  // Withdraw money
+                break;
+            case 4:
+                cout << "Exiting the banking system.\n";
+                break;
+            default:
+                cout << "Invalid choice. Please try again.\n";
+                break;
+        }
+    } while (choice != 4);  // Continue running until choice is 4 (Exit)
+
+    return 0;
+}
