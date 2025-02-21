@@ -1,6 +1,6 @@
 # banking-system
 This project simulates a basic banking system where users can check balance, deposit money, withdraw money, and exit. It uses functions to encapsulate each operation.
-
+This program simulates a basic banking system that allows users to check their balance, deposit money, and withdraw money through a menu-driven interface. The main function handles user input and calls appropriate functions based on the user's choice. The program continues to run until the user selects the option to exit.
 # Function Declarations
 displayMenu(): Displays the main menu with options.
 Displays the main menu with options for checking balance, depositing money, withdrawing money, and exiting.
